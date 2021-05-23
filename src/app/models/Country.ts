@@ -48,22 +48,6 @@ export interface CountryChartByStatus {
     date: string;
 }
 
-// export interface CompareCountriesChart {
-//     labels: string[];
-//     datasets: [
-//         {
-//             label: string;
-//             backgroundColor: string;
-//             borderColor: string;
-//             pointBackgroundColor: string;
-//             pointBorderColor: string;
-//             pointHoverBackgroundColor: string;
-//             pointHoverBorderColor: string;
-//             data: number[];
-//         }
-//     ];
-// }
-
 export interface Data {
     labels: string[];
     datasets: {
@@ -73,12 +57,3 @@ export interface Data {
     }[];
 }
 
-// export interface Options {
-//     animation: {
-//         duration: number;
-//     };
-//     hover: {
-//         animationDuration: number;
-//     };
-//     responsiveAnimationDuration: number;
-// }
