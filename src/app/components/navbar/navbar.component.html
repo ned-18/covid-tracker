@@ -1,0 +1,29 @@
+<p-menubar [model]="menuItems">
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <span class="p-input-icon-left" style="position: relative">
+      <i class="pi pi-search"></i>
+      <input
+        type="text"
+        id="search"
+        name="search"
+        [(ngModel)]="searchText"
+        class="ct-input"
+        pInputText
+        placeholder="Search By Country"
+        autocomplete="off"
+      />
+    </span>
+    <ul
+      class="ct-search p-shadow-4"
+      *ngIf="searchText === null || searchText.length >= 3"
+    >
+      <li
+        *ngFor="let country of countries | filter: searchText"
+        (click)="searchCountry($event.target.innerText)"
+      >
+        <i class="pi pi-search p-mr-2" style="font-size: 0.7rem"></i
+        >{{ country }}
+      </li>
+    </ul>
+  </form>
+</p-menubar>

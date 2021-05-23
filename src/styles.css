@@ -1,0 +1,164 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap");
+
+@import "../node_modules/primeng/resources/themes/md-light-deeppurple/theme.css";
+@import "../node_modules/primeicons/primeicons.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeflex/primeflex.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* MENUBAR */
+.p-menubar {
+  padding: 0.8rem;
+  border-radius: 0;
+  border: 0;
+  background-color: #e7cbec;
+  font-size: 1.2rem;
+  height: 4.5rem;
+  border: 1px solid #d9e0e3;
+  border-width: 0 0 2px 0;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link
+  .p-menuitem-icon,
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link
+  .p-menuitem-text {
+  color: #263238;
+  transition: 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link.p-ripple,
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link.p-ripple {
+  padding: 1.65rem 1rem;
+  border-bottom: 2px solid transparent;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link.p-ripple:hover
+  .p-menuitem-icon,
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link.p-ripple:hover
+  .p-menuitem-text,
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link.p-ripple.p-menuitem-link-active
+  .p-menuitem-icon,
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link.p-ripple.p-menuitem-link-active
+  .p-menuitem-text {
+  color: #673ab7;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link:not(.p-disabled):hover {
+  background: transparent;
+  border-radius: 0;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link.p-ripple:hover {
+  border-radius: 0;
+  border-bottom: 2px solid #9caeb7;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link.p-ripple.p-menuitem-link-active {
+  border-bottom: 2px solid #673ab7;
+  border-radius: 0;
+}
+
+/* SPINNER & SPINNER CHART */
+.ct-spinner {
+  width: 5.5rem;
+  height: 5.5rem;
+  stroke: #e7cbec;
+}
+
+.ct-spinner--chart {
+  width: 2rem;
+  height: 2rem;
+  stroke: #e7cbec;
+}
+
+.ct-spinner .p-progress-spinner-circle,
+.ct-spinner--chart .p-progress-spinner-circle {
+  animation: progress-spinner-dash 1.5s ease-in-out infinite,
+    progress-spinner-color 6s ease-in-out infinite;
+}
+
+@keyframes progress-spinner-color {
+  100%,
+  0% {
+    stroke: #3e1046;
+  }
+  40% {
+    stroke: #6d1b7b;
+  }
+  66% {
+    stroke: #9c27b0;
+  }
+  80%,
+  90% {
+    stroke: #c279ce;
+  }
+}
+
+/* Responsive */
+
+@media screen and (max-width: 960px) {
+  .p-menubar {
+    width: 100%;
+  }
+
+  .pi-bars:before {
+    content: "\e91d";
+    font-size: 1.5rem;
+  }
+
+  .p-menubar .p-menubar-root-list {
+    background: #e7cbec;
+    border-top: 2px solid #673ab7;
+  }
+
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link.p-ripple.p-menuitem-link-active,
+  .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-link.p-ripple.p-menuitem-link-active {
+    border-bottom: none;
+  }
+}

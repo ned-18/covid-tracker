@@ -1,0 +1,51 @@
+<div
+  class="p-fluid p-grid p-sm-10 p-sm-offset-1 p-md-8 p-md-offset-2"
+  *ngIf="!error"
+>
+  <div class="p-col-12" *ngIf="!isLoading">
+    <div class="p-d-flex p-jc-center p-ai-center">
+      <img [src]="flagSrc" class="p-mr-4" height="100%" />
+      <h1>{{ country.Country }}</h1>
+    </div>
+    <p class="p-text-center p-text-bold" style="font-size: 1.2rem">
+      {{ country.Date | date: "fullDate" }}
+    </p>
+    <ul class="ct-list--country p-mt-6 p-shadow-7">
+      <li>
+        <span class="ct-list--item">Total Confirmed cases: </span
+        >{{ country.Confirmed | number }}
+      </li>
+      <li>
+        <span class="ct-list--item">Active cases: </span
+        >{{ country.Active | number }}
+      </li>
+      <li>
+        <span class="ct-list--item">Total Deaths: </span>
+        {{ country.Deaths | number }}
+      </li>
+      <li>
+        <span class="ct-list--item">Total Recovered: </span>
+        {{ country.Recovered | number }}
+      </li>
+    </ul>
+    <p class="ct-text">
+      In {{ country.Country }}, {{ country.Date | date }}, there have been
+      {{ country.Confirmed | number }} confirmed cases of COVID-19, including
+      {{ country.Deaths | number }} deaths and
+      {{ country.Active | number }} active cases.
+    </p>
+  </div>
+
+  <p-progressSpinner
+    *ngIf="isLoading"
+    class="p-col-12 p-text-center p-mt-6"
+    styleClass="ct-spinner"
+    strokeWidth="4"
+    animationDuration="1s"
+  ></p-progressSpinner>
+</div>
+
+<app-search-error
+  *ngIf="error && !isLoading"
+  [searchTerm]="searchParam"
+></app-search-error>

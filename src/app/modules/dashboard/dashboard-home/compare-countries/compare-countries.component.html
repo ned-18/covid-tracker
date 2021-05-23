@@ -1,0 +1,16 @@
+<app-dropdown (getChartData)="getData($event)"></app-dropdown>
+<div
+  class="p-fluid p-grid p-col-12"
+  *ngIf="data.datasets.length < 2 ? isLoading : !isLoading"
+>
+  <p-chart type="radar" [data]="data" class="p-col-12"></p-chart>
+</div>
+
+<div class="p-fluid p-grid" *ngIf="isLoading">
+  <p-progressSpinner
+    class="p-col-12 p-text-center"
+    styleClass="ct-spinner"
+    strokeWidth="4"
+    animationDuration="1s"
+  ></p-progressSpinner>
+</div>

@@ -1,0 +1,31 @@
+<h5 *ngIf="!isLoading">{{ dateByStatus }} - By Status</h5>
+<p-chart
+  #chartByStatus
+  type="horizontalBar"
+  [data]="dataByStatus"
+  *ngIf="!isLoading"
+></p-chart>
+<div *ngIf="!isLoading" class="p-d-flex p-jc-between p-mr-5 p-ml-5">
+  <div *ngFor="let s of status; let i = index">
+    <label for="{{ s.name }}" style="cursor: pointer">
+      <input
+        type="checkbox"
+        id="{{ s.name }}"
+        name="statusOptions"
+        (change)="changeCheckbox(i)"
+        [checked]="s.checked"
+        [class]="'c' + i"
+      />
+      {{ s.name }}
+    </label>
+  </div>
+</div>
+
+<div class="p-fluid p-grid" *ngIf="isLoading">
+  <p-progressSpinner
+    class="p-col-12 p-text-center"
+    styleClass="ct-spinner--chart"
+    strokeWidth="2"
+    animationDuration="1s"
+  ></p-progressSpinner>
+</div>

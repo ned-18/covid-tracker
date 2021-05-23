@@ -1,0 +1,11 @@
+<h5 *ngIf="!isLoading">{{ dateAllStatus }} - All Status</h5>
+<p-chart type="bar" [data]="dataAllStatus" *ngIf="!isLoading"></p-chart>
+
+<div class="p-fluid p-grid" *ngIf="isLoading">
+  <p-progressSpinner
+    class="p-col-12 p-text-center"
+    styleClass="ct-spinner--chart"
+    strokeWidth="2"
+    animationDuration="1s"
+  ></p-progressSpinner>
+</div>

@@ -1,0 +1,31 @@
+<div class="p-field p-col-12 p-xl-4 p-md-12">
+  <h4 for="range">Select range date</h4>
+  <p-calendar
+    dateFormat="D M dd yy"
+    inputId="range"
+    selectionMode="range"
+    [(ngModel)]="rangeDates"
+    [minDate]="minDateValue"
+    [maxDate]="maxDateValue"
+    [readonlyInput]="true"
+    [monthNavigator]="true"
+    [showIcon]="true"
+    [showButtonBar]="true"
+    (onSelect)="onSelect()"
+    placeholder="Mon May 03 2021 - Tue May 04 2021"
+  ></p-calendar>
+</div>
+<p-chart
+  type="bar"
+  [data]="dataByDateAllStatus"
+  *ngIf="!isLoading && from && to"
+></p-chart>
+
+<div class="p-fluid p-grid" *ngIf="isLoading">
+  <p-progressSpinner
+    class="p-col-12 p-text-center"
+    styleClass="ct-spinner--chart"
+    strokeWidth="2"
+    animationDuration="1s"
+  ></p-progressSpinner>
+</div>

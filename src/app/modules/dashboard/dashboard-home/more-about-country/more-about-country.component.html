@@ -1,0 +1,59 @@
+<p-dropdown
+  *ngIf="!isLoading"
+  id="country"
+  name="country"
+  [options]="countries"
+  [(ngModel)]="selectedCountry"
+  optionLabel="name"
+  [filter]="true"
+  filterBy="name"
+  styleClass="p-mb-6"
+  placeholder="Select a Country"
+  (onChange)="onSelect()"
+>
+  <ng-template pTemplate="selectedItem">
+    <div
+      class="country-item country-item-value"
+      *ngIf="selectedCountry.name.length > 0"
+    >
+      <div>{{ selectedCountry.name }}</div>
+    </div>
+  </ng-template>
+  <ng-template let-country pTemplate="item">
+    <div class="country-item">
+      <div>{{ country.name }}</div>
+    </div>
+  </ng-template>
+</p-dropdown>
+
+<div
+  class="p-fluid p-grid p-col-12"
+  *ngIf="!message && selectedCountry.name.length > 0 && !isLoading"
+>
+  <div class="p-col-12 p-xl-6 p-md-12">
+    <app-all-status></app-all-status>
+  </div>
+
+  <div class="p-col-12 p-xl-6 p-md-12">
+    <app-by-status></app-by-status>
+  </div>
+
+  <div class="p-col-12">
+    <app-by-date></app-by-date>
+  </div>
+</div>
+
+<div class="p-fluid p-grid" *ngIf="isLoading && !message">
+  <p-progressSpinner
+    class="p-col-12 p-text-center"
+    styleClass="ct-spinner"
+    strokeWidth="4"
+    animationDuration="1s"
+  ></p-progressSpinner>
+</div>
+
+<div *ngIf="!isLoading && message">
+  <p class="p-text-bold p-text-center" style="font-size: 1.5rem">
+    {{ message }}
+  </p>
+</div>

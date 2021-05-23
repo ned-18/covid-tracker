@@ -1,0 +1,31 @@
+<h3 class="ct-header p-text-center">Global</h3>
+<div class="ct-card p-fluid p-d-flex p-flex-column p-flex-lg-row">
+  <ul class="ct-list p-mr-4 p-shadow-7">
+    <li>
+      <span class="ct-list--item">New Confirmed cases: </span
+      >{{ cases.NewConfirmed | number }}
+    </li>
+    <li>
+      <span class="ct-list--item">New Deaths: </span>
+      {{ cases.NewDeaths | number }}
+    </li>
+    <li>
+      <span class="ct-list--item">New Recovered: </span>
+      {{ cases.NewRecovered | number }}
+    </li>
+  </ul>
+  <ul class="ct-list p-shadow-7">
+    <li>
+      <span class="ct-list--item">Total Confirmed cases: </span
+      >{{ cases.TotalConfirmed | number }}
+    </li>
+    <li>
+      <span class="ct-list--item">Total Deaths: </span>
+      {{ cases.TotalDeaths | number }}
+    </li>
+    <li>
+      <span class="ct-list--item">Total Recovered: </span>
+      {{ cases.TotalRecovered | number }}
+    </li>
+  </ul>
+</div>

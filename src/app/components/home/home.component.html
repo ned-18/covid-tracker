@@ -1,0 +1,35 @@
+<div class="p-fluid p-grid p-sm-10 p-sm-offset-1 p-md-8 p-md-offset-2">
+  <div class="p-d-flex p-jc-center p-ai-center p-col-12">
+    <img src="assets/images/logo.png" class="ct-image p-mr-2" />
+    <h1>Covid tracker</h1>
+  </div>
+  <p
+    class="p-col-12 p-text-center p-text-bold"
+    style="font-size: 1.2rem"
+    *ngIf="!isLoading"
+  >
+    {{ casesData.Date | date: "full" }}
+  </p>
+  <app-card class="p-col-12" [cases]="casesData" *ngIf="!isLoading"></app-card>
+  <p class="ct-text" *ngIf="!isLoading">
+    Globally, as of {{ casesData.Date | date: "longTime" }},
+    {{ casesData.Date | date }}, there have been
+    {{ casesData.TotalConfirmed | number }} confirmed cases of COVID-19,
+    including {{ casesData.TotalDeaths | number }} deaths.
+  </p>
+  <p-progressSpinner
+    *ngIf="isLoading"
+    class="p-col-12 p-text-center p-mt-6"
+    styleClass="ct-spinner"
+    strokeWidth="4"
+    animationDuration="1s"
+  ></p-progressSpinner>
+  <div class="p-col-12 p-text-center">
+    <a class="ct-link" href="https://github.com/ned-18" *ngIf="!isLoading"
+      >© ned-18</a
+    >
+    <a class="ct-link" href="https://covid19api.com/" *ngIf="!isLoading"
+      >API by: https://covid19api.com/</a
+    >
+  </div>
+</div>

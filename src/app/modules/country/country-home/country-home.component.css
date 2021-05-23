@@ -1,0 +1,35 @@
+.ct-list--country {
+  list-style: none;
+  margin: 0;
+  padding: 3rem 2rem;
+  list-style: none;
+  background-color: #c2e6e2;
+  border-radius: 5px;
+}
+
+.ct-list--country li {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+}
+
+.ct-list--country li:nth-child(3) .ct-list--item {
+  color: #75341a;
+}
+
+.ct-list--country li:last-child .ct-list--item {
+  color: #588730;
+}
+
+.ct-list--item {
+  font-weight: 600;
+}
+
+.ct-text {
+  padding: 1rem 0.5rem;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+}

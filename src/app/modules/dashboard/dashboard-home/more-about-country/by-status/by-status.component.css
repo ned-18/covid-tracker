@@ -1,0 +1,15 @@
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin: 0.8rem;
+  cursor: pointer;
+}
+
+.c0 {
+  filter: hue-rotate(0deg);
+}
+.c1 {
+  filter: hue-rotate(150deg);
+}
+.c2 {
+  filter: hue-rotate(240deg);
+}

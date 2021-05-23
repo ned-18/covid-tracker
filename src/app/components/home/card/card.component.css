@@ -1,0 +1,41 @@
+.ct-header {
+  margin: 0;
+  padding: 2rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.ct-list {
+  margin: 0;
+  padding: 3rem 2rem;
+  list-style: none;
+  background-color: #cae6fc;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.ct-list li {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+}
+
+.ct-list li:nth-child(2) .ct-list--item {
+  color: #75341a;
+}
+
+.ct-list li:last-child .ct-list--item {
+  color: #588730;
+}
+
+.ct-list--item {
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 992px) {
+  .ct-list {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
