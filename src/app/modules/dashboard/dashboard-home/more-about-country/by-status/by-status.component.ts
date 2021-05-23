@@ -96,7 +96,7 @@ export class ByStatusComponent implements OnInit, OnDestroy {
     }
   }
 
-  // Capitalize every first chart of word
+  // Capitalize every first char of word
   private getNameOfCountry(str: string): string {
     const country = str.split('-').join(' ');
     const countryNameUpperCase = country.toLowerCase().split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
